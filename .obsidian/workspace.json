@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Requerimientos/Requerimientos No Funcionales.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Requerimientos No Funcionales"
+              "title": "README"
             },
             "group": "7528a5605e4138ea"
           }
@@ -36,10 +36,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Requerimientos/Requerimientos No Funcionales.md"
+                "file": "README.md"
               },
               "icon": "lucide-list",
-              "title": "Esquema de Requerimientos No Funcionales"
+              "title": "Esquema de README"
             },
             "group": "7528a5605e4138ea"
           }
@@ -186,8 +186,8 @@
   },
   "active": "b325e720a0bf92ac",
   "lastOpenFiles": [
-    "Requerimientos/Requerimientos Funcionales.md",
     "Requerimientos/Requerimientos No Funcionales.md",
+    "Requerimientos/Requerimientos Funcionales.md",
     "README.md",
     "Requerimientos"
   ]
