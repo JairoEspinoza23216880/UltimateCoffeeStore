@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Requerimientos/Requerimientos Funcionales.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Requerimientos Funcionales"
             },
             "group": "7528a5605e4138ea"
           }
@@ -36,10 +36,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Requerimientos/Requerimientos Funcionales.md"
               },
               "icon": "lucide-list",
-              "title": "Esquema de README"
+              "title": "Esquema de Requerimientos Funcionales"
             },
             "group": "7528a5605e4138ea"
           }
@@ -186,8 +186,13 @@
   },
   "active": "b325e720a0bf92ac",
   "lastOpenFiles": [
-    "Requerimientos/Requerimientos Funcionales.md",
+    "Diagrama de Clases/Class Diagram0.asta",
+    "Diagrama de Clases/JOMT5328708494942568404.jmt",
+    "Diagrama de Clases/Class Diagram0.asta.lock",
+    "Diagrama de Clases",
+    "Nueva Carpeta",
     "Requerimientos/Requerimientos No Funcionales.md",
+    "Requerimientos/Requerimientos Funcionales.md",
     "README.md",
     "Requerimientos"
   ]
