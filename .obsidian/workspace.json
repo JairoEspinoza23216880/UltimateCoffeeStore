@@ -186,14 +186,19 @@
   },
   "active": "b325e720a0bf92ac",
   "lastOpenFiles": [
+    "Diagrama de Clases/Class Diagram0.asta.lock",
+    "JavaProjects/demo/bin/Recipe.class",
+    "JavaProjects/demo/bin/Product.class",
+    "JavaProjects/demo/bin/Menu.class",
+    "JavaProjects/demo/bin/IngredientsTest.class",
+    "JavaProjects/demo/bin/IngredientController.class",
+    "JavaProjects/demo/bin/Ingredient.class",
+    "JavaProjects/demo/bin/Category.class",
+    "JavaProjects/demo/bin/App.class",
     "Diagrama de Clases/Class Diagram0.asta",
     "Diagrama de Clases/JOMT5328708494942568404.jmt",
-    "Diagrama de Clases/Class Diagram0.asta.lock",
-    "Diagrama de Clases",
-    "Nueva Carpeta",
     "Requerimientos/Requerimientos No Funcionales.md",
     "Requerimientos/Requerimientos Funcionales.md",
-    "README.md",
-    "Requerimientos"
+    "README.md"
   ]
 }
