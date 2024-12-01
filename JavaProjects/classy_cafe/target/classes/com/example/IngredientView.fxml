@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- Ventana Principal -->
+
+<SplitPane dividerPositions="0.25125156445556945" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: D6C0B3;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.IngredientWarehouseController">
+
+<!-- Objetos dentro de la Ventana -->
+   <items>
+   
+      <!-- Area de Botones Principales -->
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: AB886D;">
+      <children>
+
+      <VBox alignment="CENTER_LEFT" layoutX="105.0" layoutY="212.0" prefHeight="718.4" prefWidth="378.4" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         
+         <!-- Titulo -->
+         <Label text="CLASSY CAFE" textFill="#434040">
+            <VBox.margin>
+               <Insets bottom="40.0" left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font name="System Bold Italic" size="24.0" />
+            </font>
+         </Label>
+
+         <!-- Boton de Menu -->
+         <Button fx:id="menuButton" onAction="#openMenu" prefHeight="40.0" style="-fx-background-color: grey;" text="Menu" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Boton de Pedidos -->
+         <Button fx:id="orderButton" prefHeight="40.0" style="-fx-background-color: grey;" text="Pedidos" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Boton de Ingredientes -->
+         <Button fx:id="ingredientButton" prefHeight="40.0" style="-fx-background-color: grey;" text="Ingredientes" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Boton de Ventas -->
+         <Button fx:id="saleButton" prefHeight="40.0" style="-fx-background-color: grey;" text="Ventas" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Boton de Clientes -->
+         <Button fx:id="customerButton" prefHeight="40.0" style="-fx-background-color: grey;" text="Clientes" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Boton de Mesas y Asientos -->
+         <Button fx:id="tableButton" prefHeight="40.0" style="-fx-background-color: grey;" text="Mesas y Asientos" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font name="System Italic" size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Boton de Pagos -->
+         <Button fx:id="paymentButton" prefHeight="40.0" style="-fx-background-color: grey;" text="Pagos" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Boton de Reportes -->
+         <Button fx:id="reportButton" prefHeight="40.0" style="-fx-background-color: grey;" text="Reportes" textAlignment="CENTER" textFill="#ffffff">
+            <VBox.margin>
+               <Insets left="50.0" />
+            </VBox.margin>
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+      </children>
+      </VBox>
+      </children>
+      </AnchorPane>
+
+
+      <!-- Area de Ingredientes -->
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+      <children>
+      <SplitPane dividerPositions="0.13699776785714285" layoutX="287.0" layoutY="271.0" orientation="VERTICAL" prefHeight="718.4" prefWidth="894.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+      <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="71.0" prefWidth="893.0" style="-fx-background-color: D6C0B3;">
+      <children>
+
+         <!-- Titulo de Ingredientes -->
+         <Label fx:id="titleLabel" layoutX="80.0" layoutY="20.0" text="INGREDIENTES" textFill="#434040">
+            <font>
+               <Font name="System Bold" size="36.0" />
+            </font>
+         </Label>
+
+         <!-- Boton de Regresar -->
+         <Button fx:id="exitButton" layoutX="788.0" layoutY="27.0" prefHeight="40.0" prefWidth="127.0" style="-fx-background-color: grey;" text="Regresar" textAlignment="CENTER" textFill="#ffffff">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Button>
+                  
+      </children>
+      </AnchorPane>
+
+                  <!-- Area de Ingredientes -->
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: D6C0B3;">
+      <children>
+
+         <!-- Boton de Agregar -->
+         <Button fx:id="addButton" layoutX="164.0" layoutY="540.0" onAction="#openAddPopUp" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: grey;" text="Agregar" textAlignment="CENTER" textFill="#ffffff">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Button>
+
+         <!-- Buscador de Ingredientes -->
+         <TextArea fx:id="searchBar" layoutX="123.0" layoutY="11.0" prefHeight="38.0" prefWidth="636.0" />
+
+         <!-- Panel de los Ingredientes -->
+         <Pane layoutX="123.0" layoutY="71.0" prefHeight="438.0" prefWidth="636.0" style="-fx-background-color: E4E0E1;">                        
+            <children>                        
+
+               <!-- Scroll de Ingredientes -->
+               <ScrollPane fx:id="ingredientScroll" fitToHeight="true" fitToWidth="true" layoutX="0.0" layoutY="0.0" prefHeight="438.0" prefWidth="636.0">
+                  <content>
+                     <VBox fx:id="ingredientContainer" alignment="TOP_CENTER" prefHeight="438.0" prefWidth="636.0" spacing="10.0">
+                     
+                        <!-- Aquí Van los Ingredientes -->
+
+                     </VBox>
+                  </content>
+               </ScrollPane>
+            </children>
+         </Pane>
+         
+      </children>
+      </AnchorPane>
+      </items>
+      </SplitPane>
+      </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
