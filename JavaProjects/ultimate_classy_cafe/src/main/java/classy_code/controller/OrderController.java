@@ -23,11 +23,11 @@ import javafx.stage.StageStyle;
 public class OrderController extends ListNInfoController {
     @FXML private Button exitButton;
     @FXML private Button addButton;
-
     @FXML private Label titleLabel;
+
+
     @FXML private VBox orderContainer;
     @FXML private VBox infoContainer;
-
     private OrderWarehouse model;
     @FXML ObservableList<TableOrder> orderList;
 

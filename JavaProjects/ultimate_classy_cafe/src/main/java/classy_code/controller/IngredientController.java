@@ -24,22 +24,18 @@ public class IngredientController extends BasicController {
     @FXML private Button customerButton;
     @FXML private Button tableButton;
     @FXML private Button reportButton;
-
     @FXML private Button exitButton;
     @FXML private Button addButton;
-
     @FXML private Label titleLabel;
 
     @FXML private VBox ingredientContainer;
     @FXML private TextField searchIngredient;
-
     @FXML private ObservableList<Ingredient> ingredient_list = FXCollections.observableArrayList();
-
     private IngredientWarehouse model;
 
     //Constructor
     /*
-     * Constructor de la clase IngredientController
+     * Constructor de la clase IngredientController 
      * Inicializa el modelo y la lista de ingredientes
      * @param void
      */

@@ -13,10 +13,8 @@ public class BasicController {
     @FXML private Button customerButton;
     @FXML private Button tableButton;
     @FXML private Button reportButton;
-
     @FXML private Button exitButton;
     @FXML private Button addButton;
-
     @FXML private Label titleLabel;
 
     /*

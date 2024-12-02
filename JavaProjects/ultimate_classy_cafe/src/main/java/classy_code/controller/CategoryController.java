@@ -30,6 +30,7 @@ public class CategoryController extends SearchNInfoController {
     @FXML private Button exitButton;
     @FXML private Button addButton;
     @FXML private Label titleLabel;
+
     @FXML private VBox productContainer;
     @FXML private VBox infoContainer;
 

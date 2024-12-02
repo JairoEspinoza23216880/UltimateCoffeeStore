@@ -23,18 +23,14 @@ public class TableController extends ListNInfoController {
     @FXML private Button customerButton;
     @FXML private Button tableButton;
     @FXML private Button reportButton;
-
     @FXML private Button exitButton;
     @FXML private Button addButton;
-
     @FXML private Label titleLabel;
 
     @FXML private Label infoTitleLabel;
     @FXML private VBox tableContainer;
     @FXML private VBox infoContainer;
-
     @FXML private ObservableList<Table> table_list;
-
     private TableWarehouse model;
 
     //Constructor

@@ -34,6 +34,7 @@ public class MenuController extends ListNInfoController {
     @FXML private Button exitButton;
     @FXML private Button addButton;
     @FXML private Label titleLabel;
+    
     @FXML private VBox foodContainer;
     @FXML private VBox drinkContainer;
 

@@ -29,16 +29,13 @@ public class CustomerController extends ListNInfoController{
     @FXML private Button customerButton;
     @FXML private Button tableButton;
     @FXML private Button reportButton;
-
     @FXML private Button exitButton;
     @FXML private Button addButton;
-
     @FXML private Label titleLabel;
+
     @FXML private VBox sprogramContainer;
     @FXML private VBox infoContainer;
-
     @FXML private ObservableList<SpoiledProgram> sprogram_list;
-
     private CustomerWarehouse model;
 
     // Constructor
