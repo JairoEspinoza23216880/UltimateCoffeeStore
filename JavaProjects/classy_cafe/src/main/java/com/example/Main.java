@@ -12,7 +12,7 @@ public class Main extends Application {
 
     @SuppressWarnings("exports")
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/IngredientView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/BasicView.fxml"));
         primaryStage.setTitle("Classy Cafe");
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         primaryStage.setScene(new Scene(root, screenBounds.getWidth(), screenBounds.getHeight()));
