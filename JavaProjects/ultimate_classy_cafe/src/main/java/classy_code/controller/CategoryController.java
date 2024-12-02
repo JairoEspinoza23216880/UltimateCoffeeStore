@@ -14,8 +14,8 @@ import classy_code.model.menu.FoodCategory;
 import classy_code.model.menu.DrinkCategory;
 import classy_code.model.menu.Food;
 import classy_code.model.menu.Drink;
+import classy_code.App;
 import classy_code.model.ingredient.Ingredient;
-import classy_code.model.ingredient.IngredientWarehouse;
 import classy_code.model.menu.Recipe;
 import java.util.List;
 
@@ -40,6 +40,10 @@ public class CategoryController extends SearchNInfoController {
         System.out.println("CategoryController");
     }
 
+    /*
+     * metodo setCategory
+     * establece la categoria
+     */
     public void setCategory(Object category) {
         this.category = category;
         if (category instanceof FoodCategory) {
@@ -51,6 +55,11 @@ public class CategoryController extends SearchNInfoController {
         }
     }
 
+    /*
+     * metodo loadProducts
+     * carga los productos
+     * @param products
+     */
     private void loadProducts(List<?> products) {
         productContainer.getChildren().clear();
         if (products.isEmpty()) {
@@ -64,6 +73,11 @@ public class CategoryController extends SearchNInfoController {
         }
     }
 
+    /*
+     * metodo createProductHBox
+     * crea un HBox con la informacion de un producto
+     * @param product
+     */
     private HBox createProductHBox(Object product) {
         HBox hbox = new HBox(10);
         Label label = new Label(product instanceof Food ? ((Food) product).getName() : ((Drink) product).getName());
@@ -82,6 +96,11 @@ public class CategoryController extends SearchNInfoController {
         return hbox;
     }
 
+    /*
+     * metodo showProductInfo
+     * muestra la informacion de un producto
+     * @param product
+     */
     private void showProductInfo(Object product) {
         infoContainer.getChildren().clear();
         Label titleLabel = new Label("Información del Producto");
@@ -111,6 +130,13 @@ public class CategoryController extends SearchNInfoController {
         }
     }
 
+    /*
+     * metodo createIngredientHBox
+     * crea un HBox con la informacion de un ingrediente
+     * @param ingredient
+     * @param quantity
+     * @param recipe
+     */
     private HBox createIngredientHBox(Ingredient ingredient, double quantity, Recipe recipe) {
         HBox hbox = new HBox(10);
         Label label = new Label(ingredient.getName() + ": " + quantity);
@@ -124,6 +150,12 @@ public class CategoryController extends SearchNInfoController {
         return hbox;
     }
 
+    /*
+     * metodo handleEditIngredient
+     * maneja la edicion de un ingrediente
+     * @param ingredient
+     * @param recipe
+     */
     private void handleEditIngredient(Ingredient ingredient, Recipe recipe) {
         Stage stage = new Stage();
         VBox vbox = new VBox(10);
@@ -147,6 +179,13 @@ public class CategoryController extends SearchNInfoController {
         stage.showAndWait();
     }
 
+    /*
+     * metodo handleDeleteIngredient
+     * maneja la eliminacion de un ingrediente
+     * @param hbox
+     * @param ingredient
+     * @param recipe
+     */
     private void handleDeleteIngredient(HBox hbox, Ingredient ingredient, Recipe recipe) {
         infoContainer.getChildren().remove(hbox);
         int index = recipe.getIngredients().indexOf(ingredient);
@@ -154,20 +193,30 @@ public class CategoryController extends SearchNInfoController {
         recipe.getQuantities().remove(index);
     }
 
+    /*
+     * metodo handleAddIngredient
+     * maneja la adicion de un ingrediente
+     * @param product
+     */
     private void handleAddIngredient(Object product) {
         Stage stage = new Stage();
         VBox vbox = new VBox(10);
         vbox.setAlignment(javafx.geometry.Pos.CENTER);
 
         Label ingredientLabel = new Label("Ingrediente");
-        ComboBox<Ingredient> ingredientComboBox = new ComboBox<>();
-        ingredientComboBox.getItems().addAll(IngredientWarehouse.getInstance().getIngredients_list());
+        ComboBox<String> ingredientComboBox = new ComboBox<>();
+        for (Ingredient ingredient : App.ingredientController.getModel().getIngredients_list()) {
+            ingredientComboBox.getItems().add(ingredient.getName());
+        }
         Label quantityLabel = new Label("Cantidad");
         TextField quantityField = new TextField();
         Button saveButton = new Button("Guardar");
 
         saveButton.setOnAction(e -> {
-            Ingredient selectedIngredient = ingredientComboBox.getValue();
+            Ingredient selectedIngredient = App.ingredientController.getModel().getIngredients_list().stream()
+                .filter(ingredient -> ingredient.getName().equals(ingredientComboBox.getValue()))
+                .findFirst()
+                .orElse(null);
             double quantity = Double.parseDouble(quantityField.getText());
             Recipe recipe = product instanceof Food ? ((Food) product).getRecipe() : ((Drink) product).getRecipe();
             if (recipe == null) {
@@ -192,6 +241,11 @@ public class CategoryController extends SearchNInfoController {
         stage.showAndWait();
     }
 
+    /*
+     * metodo handleEditProduct
+     * maneja la edicion de un producto
+     * @param product
+     */
     private void handleEditProduct(Object product) {
         Stage stage = new Stage();
         VBox vbox = new VBox(10);
@@ -230,6 +284,12 @@ public class CategoryController extends SearchNInfoController {
         stage.showAndWait();
     }
 
+    /*
+     * metodo handleDeleteProduct
+     * maneja la eliminacion de un producto
+     * @param hbox
+     * @param product
+     */
     private void handleDeleteProduct(HBox hbox, Object product) {
         productContainer.getChildren().remove(hbox);
         if (category instanceof FoodCategory) {
@@ -239,6 +299,10 @@ public class CategoryController extends SearchNInfoController {
         }
     }
 
+    /*
+     * metodo handleAddButton
+     * maneja la adicion de un producto
+     */
     @FXML
     private void handleAddButton() {
         Stage stage = new Stage();

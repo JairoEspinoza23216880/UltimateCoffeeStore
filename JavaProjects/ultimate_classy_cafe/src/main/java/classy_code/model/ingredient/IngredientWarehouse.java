@@ -68,4 +68,17 @@ public class IngredientWarehouse {
         }
         return null;
     }
+
+    /*
+     * Metodo toStringIngredients
+     * Devuelve un string con los ingredientes y su stock
+     * @return: String con los ingredientes y su stock
+     */
+    public String toStringIngredients() {
+        String result = "";
+        for (Ingredient ingredient : ingredients_list) {
+            result += ingredient.getName() + " - " + ingredient.getStock() + "\n";
+        }
+        return result;
+    }
 }

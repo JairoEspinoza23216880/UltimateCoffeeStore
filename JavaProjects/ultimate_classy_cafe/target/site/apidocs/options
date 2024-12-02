@@ -1,0 +1,26 @@
+--class-path
+'C:/Users/JGET/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar;C:/Users/JGET/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar;C:/Users/JGET/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar;C:/Users/JGET/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar'
+--module-path
+'C:/Users/JGET/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13-win.jar;C:/Users/JGET/.m2/repository/com/google/code/gson/gson/2.8.8/gson-2.8.8.jar;C:/Users/JGET/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13-win.jar;C:/Users/JGET/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13-win.jar;C:/Users/JGET/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13-win.jar'
+--patch-module
+classy_code='c:/Users/JGET/OneDrive/Carpetas Principales/Documentos/Repositorios/UltimateCoffeeStore/JavaProjects/ultimate_classy_cafe/src/main/java'
+-encoding
+'UTF-8'
+-protected
+--module-source-path
+'c:/Users/JGET/OneDrive/Carpetas Principales/Documentos/Repositorios/UltimateCoffeeStore/JavaProjects/ultimate_classy_cafe/target/site/apidocs/src'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'c:/Users/JGET/OneDrive/Carpetas Principales/Documentos/Repositorios/UltimateCoffeeStore/JavaProjects/ultimate_classy_cafe/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ultimate_classy_cafe 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ultimate_classy_cafe 1.0-SNAPSHOT API'

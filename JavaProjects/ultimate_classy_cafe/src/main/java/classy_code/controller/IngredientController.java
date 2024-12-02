@@ -1,6 +1,5 @@
 package classy_code.controller;
 
-import classy_code.App;
 import classy_code.model.ingredient.Ingredient;
 import classy_code.model.ingredient.IngredientWarehouse;
 import javafx.collections.FXCollections;
@@ -16,7 +15,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class IngredientController extends ListNInfoController {
+
+public class IngredientController extends BasicController {
     @FXML private Button menuButton;
     @FXML private Button orderButton;
     @FXML private Button ingredientButton;
@@ -33,32 +33,57 @@ public class IngredientController extends ListNInfoController {
     @FXML private VBox ingredientContainer;
     @FXML private TextField searchIngredient;
 
-    @FXML private ObservableList<Ingredient> ingredient_list;
+    @FXML private ObservableList<Ingredient> ingredient_list = FXCollections.observableArrayList();
 
     private IngredientWarehouse model;
 
-    @Override
-    public void initialize() {
-        System.out.println("IngredientWhController");
+    //Constructor
+    /*
+     * Constructor de la clase IngredientController
+     * Inicializa el modelo y la lista de ingredientes
+     * @param void
+     */
+    public IngredientController() {
+        System.out.println("IngredientController created");
         model = new IngredientWarehouse();
         ingredient_list = FXCollections.observableArrayList();
+    }
 
+    //Metodos
+    /*
+     * Metodo initialize
+     * Inicializa el controlador
+     * @param void
+     * @return void
+     */
+    @Override
+    public void initialize() {
+        System.out.println("IngredientController initialized");
         searchIngredient.textProperty().addListener((observable, oldValue, newValue) -> {
-            updateIngredientList();
+        updateIngredientList();
         });
+        updateIngredientList();
     }
 
-    @FXML
-    public void toStart() throws Exception {
-        App.setRoot("BasicView");
+    /*
+     * Metodo getModel
+     * Devuelve el modelo
+     */
+    @SuppressWarnings("exports")
+    public IngredientWarehouse getModel() {
+        return model;
     }
 
+    /*
+     * Metodo updateIngredientList
+     * Actualiza la lista de ingredientes
+     */
     public void updateIngredientList() {
         ingredientContainer.getChildren().clear();
         String searchText = searchIngredient.getText().toLowerCase();
         for (Ingredient ingredient : ingredient_list) {
             if (ingredient.getName().toLowerCase().contains(searchText)) {
-            //HBOx Contenedor
+            //HBox Contenedor
             HBox hbox = new HBox();
             hbox.setPrefWidth(ingredientContainer.getPrefWidth());
             hbox.setStyle("-fx-background-color: lightgrey; -fx-padding: 10;");
@@ -131,6 +156,12 @@ public class IngredientController extends ListNInfoController {
         }
     }
 
+    /*
+     * Metodo openAddPopUp
+     * Abre una ventana emergente para añadir un ingrediente
+     * @param ActionEvent event
+     * @return void
+     */
     @SuppressWarnings("exports")
     public void openAddPopUp(ActionEvent event) {
         Stage popUpStage = new Stage();
@@ -155,6 +186,8 @@ public class IngredientController extends ListNInfoController {
             model.addIngredient(name, stock);
             ingredient_list.add(model.findIngredient(name));
             updateIngredientList();
+            System.out.println("IngredientController model: " + model.toStringIngredients());
+            System.out.println("IngredientController ingredient_list: " + ingredient_list.toString());
             popUpStage.close();
         });
 

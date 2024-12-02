@@ -1,10 +1,14 @@
 //Revision 1.0 (Pendiente Revisión Final)
 package classy_code.model.ingredient;
 
+import java.io.Serializable;
+
 /*
  * Clase Ingredient
  */
-public class Ingredient {
+public class Ingredient implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
     public String name;
     public Double stock;
     

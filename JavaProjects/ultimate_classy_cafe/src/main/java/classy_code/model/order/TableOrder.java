@@ -6,14 +6,13 @@ import java.util.ArrayList;
 
 //Local Imports
 import classy_code.model.customer.Customer;
-import classy_code.model.table.Table;
 
 /*
  * Clase TableOrder
  */
 public class TableOrder {
     //Atributos
-    private Table table;
+    private int tableId;
     private double price_total;
     private Customer customer;
     private ArrayList<ChairOrder> order_list;
@@ -23,25 +22,26 @@ public class TableOrder {
      * Constructor de la clase TableOrder
      * @param table
      */
-    public TableOrder(Table table) {
-        this.table = table;
+    public TableOrder(int tableId, Customer customer) {
+        this.tableId = tableId;
+        this.customer = customer;
         this.price_total = 0;
         this.order_list = new ArrayList<ChairOrder>();
     }
 
     //Getters y Setters
     /*
-     * Metodo GetTable
+     * Metodo GetTableID
      * Método que retorna la mesa
      * @return table
      */
-    public Table getTable() {return table;}
+    public int getTableId() {return tableId;}
     /*
      * Metodo SetTable
      * Método que establece la mesa
      * @param table
      */
-    public void setTable(Table table) {this.table = table;}
+    public void setTable(int tableId) {this.tableId = tableId;}
     /*
      * Metodo GetPrice_total
      * Método que retorna el precio total

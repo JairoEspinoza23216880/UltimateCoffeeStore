@@ -44,7 +44,7 @@ public class OrderWarehouse {
      */
     public TableOrder findOrder(int table_id) {
         for (TableOrder order : order_list) {
-            if (order.getTable().getId() == table_id) {
+            if (order.getTableId() == table_id) {
                 return order;
             }
         }

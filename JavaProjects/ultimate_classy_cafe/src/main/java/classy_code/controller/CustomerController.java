@@ -3,7 +3,6 @@ package classy_code.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import classy_code.App;
 import classy_code.model.customer.ContactInfo;
 import classy_code.model.customer.Customer;
 import classy_code.model.customer.CustomerWarehouse;
@@ -41,20 +40,46 @@ public class CustomerController extends ListNInfoController{
     @FXML private ObservableList<SpoiledProgram> sprogram_list;
 
     private CustomerWarehouse model;
-    
-    public void initialize() {
-        System.out.println("CustomerController initialized");
+
+    // Constructor
+    /* 
+     * Constructor de la clase CustomerController
+     * Inicializa el modelo de la clase CustomerWarehouse
+    */
+    public CustomerController() {
+        System.out.println("CustomerController created");
         model = new CustomerWarehouse();
         sprogram_list = FXCollections.observableArrayList();
-
         initializeGeneralSpoiledProgram();
+    }
+    
+    // Métodos
+    /* 
+     * Método initialize
+     * Inicializa el controlador de la clase CustomerController
+     * Actualiza la lista de programas de beneficios
+    */
+    @FXML
+    @Override
+    public void initialize() {
+        System.out.println("CustomerController initialized");
         updateSProgramList();
     }
 
-    public void toStart() throws Exception {
-        App.setRoot("BasicView");
+    /* 
+     * Método getModel
+     * Retorna el modelo de la clase CustomerWarehouse
+     * @return CustomerWarehouse
+    */
+    @SuppressWarnings("exports")
+    public CustomerWarehouse getModel() {
+        return model;
     }
 
+    /*
+     * Método initializeGeneralSpoiledProgram
+     * Inicializa el programa de beneficios general
+     */
     private void initializeGeneralSpoiledProgram(){
         SpoiledProgram generalprogram = new SpoiledProgram("General", "Descuento general", 0.0);
         generalprogram.setCustomerList(model.getCustomerList());
@@ -62,6 +87,11 @@ public class CustomerController extends ListNInfoController{
         sprogram_list.add(generalprogram);
     }
 
+
+    /*
+     * Método updateSProgramList
+     * Actualiza la lista de programas de beneficios
+     */
     public void updateSProgramList() {
         sprogramContainer.getChildren().clear();
         for (SpoiledProgram sprogram : sprogram_list) {
@@ -162,7 +192,12 @@ public class CustomerController extends ListNInfoController{
         }
     }
 
-    public void openAddPopUp() {
+    /*
+     * Método openAddPopUp
+     * Abre una ventana emergente para agregar un programa de beneficios
+     */
+    @FXML
+    private void openAddPopUp() {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(addButton.getScene().getWindow());
@@ -197,6 +232,11 @@ public class CustomerController extends ListNInfoController{
         stage.showAndWait();
     }
 
+    /*
+     * Método showCustomerList
+     * Muestra la lista de clientes de un programa de beneficios
+     * @param sprogram Programa de beneficios
+     */
     private void showCustomerList(SpoiledProgram sprogram) {
         infoContainer.getChildren().clear();
 
@@ -240,10 +280,19 @@ public class CustomerController extends ListNInfoController{
         }
     }
     
+    /*
+     * Método clearCustomerList
+     * Limpia la lista de clientes
+     */
     private void clearCustomerList() {
         infoContainer.getChildren().clear();
         }
 
+    /*
+     * Método openAddCustomerPopUp
+     * Abre una ventana emergente para agregar un cliente a un programa de beneficios
+     * @param sprogram Programa de beneficios
+     */
     @SuppressWarnings("exports")
     public void openAddCustomerPopUp(SpoiledProgram sprogram) {
         Stage stage = new Stage();
@@ -324,7 +373,13 @@ public class CustomerController extends ListNInfoController{
         stage.setScene(scene);
         stage.showAndWait();
     }
-        
+     
+    /*
+     * Método openEditCustomerPopUp
+     * Abre una ventana emergente para editar un cliente de un programa de beneficios
+     * @param sprogram Programa de beneficios
+     * @param customer Cliente
+     */
     @SuppressWarnings("exports")
     public void openEditCustomerPopUp(SpoiledProgram sprogram, Customer customer) {
         Stage stage = new Stage();

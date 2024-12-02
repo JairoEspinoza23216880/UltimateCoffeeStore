@@ -18,6 +18,10 @@ public class ReportController extends ListNInfoController {
 
     @FXML private Label titleLabel;
 
+    /*
+     * metodo initialize
+     * Inicializa el controlador
+     */
     public void initialize() {
         System.out.println("ReportController initialized");
     }

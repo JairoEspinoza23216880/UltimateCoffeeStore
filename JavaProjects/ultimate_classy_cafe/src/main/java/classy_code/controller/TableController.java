@@ -1,6 +1,5 @@
 package classy_code.controller;
 
-import classy_code.App;
 import classy_code.model.table.Chair;
 import classy_code.model.table.Table;
 import classy_code.model.table.TableWarehouse;
@@ -38,16 +37,40 @@ public class TableController extends ListNInfoController {
 
     private TableWarehouse model;
 
-    public void initialize() {
-        System.out.println("TableController initialized");
+    //Constructor
+    /*
+     * Constructor de la clase TableController
+     * Inicializa el modelo y la lista de mesas
+     * @param void
+     */
+    public TableController() {
         model = new TableWarehouse();
         table_list = FXCollections.observableArrayList();
     }
 
-    public void toStart() throws Exception {
-        App.setRoot("BasicView");
+    /*
+     * Metodo initialize
+     * Inicializa el controlador
+     */
+    public void initialize() {
+        System.out.println("TableController initialized");
+        updateTableList();
     }
 
+    /*
+     * Metodo getModel
+     * Devuelve el modelo
+     * @param void
+     */
+    @SuppressWarnings("exports")
+    public TableWarehouse getModel() {
+        return model;
+    }
+
+    /*
+     * Metodo updateTableList
+     * Actualiza la lista de mesas
+     */
     public void updateTableList() {
         tableContainer.getChildren().clear();
         for (Table table : table_list) {
@@ -123,6 +146,10 @@ public class TableController extends ListNInfoController {
         }
     }
 
+    /*
+     * Metodo openAddPopUp
+     * Abre una ventana emergente para añadir una mesa
+     */
     @FXML
     public void openAddPopUp() {
         Stage popUpStage = new Stage();
@@ -162,6 +189,11 @@ public class TableController extends ListNInfoController {
         popUpStage.showAndWait();
     }
 
+    /*
+     * Metodo setScope
+     * Establece el alcance de la mesa
+     * @param Table table
+     */
     @SuppressWarnings("exports")
     public void setScope(Table table){
         if (table == null) {

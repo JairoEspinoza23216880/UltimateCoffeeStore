@@ -10,7 +10,6 @@ classy_code\model\table\TableWarehouse.class
 classy_code\App.class
 classy_code\controller\OrderController.class
 classy_code\model\menu\Recipe.class
-classy_code\util\JsonUtil.class
 classy_code\model\report\Report.class
 classy_code\model\table\Table.class
 classy_code\model\menu\FoodCategory.class
